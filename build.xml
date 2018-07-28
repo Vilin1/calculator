@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+
+<project name = "Calculator" default = "run">
+
+	<target name = "clean">
+		<delete dir = "build/classes"/>
+		<mkdir dir = "build/classes"/>
+	</target>
+
+	<target name = "compile">
+		<javac srcdir = "src" destdir = "build/classes" includeantruntime = "true">
+		</javac>
+	</target>
+
+	<target name = "run" depends = "clean, compile">
+		<java fork = "true" classname = "Calculator">
+			<classpath path = "build/classes"/>
+		</java>
+	</target>
+</project>
